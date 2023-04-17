@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to speech</title>
+</head>
+
+<body>
+    <h2>Text to Speech</h2>
+    <textarea id="txt" cols="30" rows="5"></textarea><br>
+    <button id="btn">speak</button>
+
+
+    <script>
+        let txt = document.getElementById('txt');
+        let btn = document.getElementById('btn');
+
+        btn.addEventListener("click", function () {
+            let text = txt.value;
+            let utterance = new SpeechSynthesisUtterance(text);
+            // utterance.lang = "tr";
+            speechSynthesis.speak(utterance);
+
+        });
+    </script>
+</body>
+
+</html>
